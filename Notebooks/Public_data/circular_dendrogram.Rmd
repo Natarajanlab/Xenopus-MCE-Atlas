@@ -1,0 +1,140 @@
+---
+title: "Dendro"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Xenopus Evo-devo
+```{r pressure, echo=FALSE}
+library(ggtreeExtra)
+library(ggtree)
+library(treeio)
+library(tidytree)
+library(ggstar)
+library(ggplot2)
+library(stringr)
+library(ggnewscale)
+library(ape)
+```
+
+
+```{r}
+data = read.table('ct_correlation_complete.tsv', sep = '\t', header=T, row.names=1)
+
+```
+
+
+```{r}
+scores <- read.table('scores.tsv', sep = '\t', header=T, row.names=1)
+scores$score_type <- factor(scores$score_type, levels=c("MCCs", "Secretory",
+                                          "BCs"))
+
+cc <- read.table('cell_counts.tsv', sep = '\t', header=T, row.names=1)
+de <- read.table('DE_genes.tsv', sep = '\t', header=T, row.names=1)
+
+dend <- data %>% # data
+        scale %>% # Scale the data
+        dist %>% # calculate a distance matrix, 
+        hclust(method = "ward.D2") %>% # Hierarchical clustering 
+        as.phylo()
+
+
+test = dend$tip.label 
+test <- test %>% str_replace("_human", "") %>% str_replace("_mouse", "") %>%  str_replace("_", "::")
+
+dataset <- sapply(strsplit(test, split = "::"), `[`, 1)
+names(dataset) <- dend$tip.label
+
+dataset_df <- data.frame(dataset =sapply(strsplit(test, split = "::"), `[`, 1))
+dataset_df$ID <- names(dataset)
+dataset_df$Size <- cc$count[match(dataset_df$ID, cc$ct)]
+
+
+
+nodeids <- c(161, 163, 179, 180, 171, 168, 167)
+nodedf <- data.frame(node=nodeids)
+nodelab <- c('Cilliated cells', 'Secretory cells', 'Epidermal progenitors', 'Immune cells', '', 'Basal cells', 'Neurons')
+poslist <- c(0)
+labdf <- data.frame(node=nodeids, label=nodelab, pos=poslist)
+
+
+
+p <- ggtree(dend, layout="fan") %>% ggtree::rotate(165) %>% ggtree::rotate(172) +
+     geom_hilight(data=nodedf, mapping=aes(node=node), extendto=6.8, 
+                  alpha=0.3, fill=c('blue', 'yellow',   'grey','red' , 'grey', 'green','grey'), color='grey',
+                  size=0.5) +
+  geom_cladelab(data=labdf, 
+                   mapping=aes(node=node, 
+                               label=label,
+                               offset.text=pos),
+                   hjust=0.5,
+                   angle="auto",
+                   barsize=NA,
+                   horizontal=FALSE, 
+                   fontsize=5,
+                   fontface="italic"
+                   )
+
+p <- p %<+% dataset_df[c('ID', 'dataset', 'Size')] + geom_star(
+                        mapping=aes(fill='Tips', 
+                                    starshape=dataset, 
+                                    size=Size
+                                    ),
+                        position="identity",starstroke=0.1) +
+         scale_fill_manual(values=c("#525252"),
+                           guide=guide_legend(keywidth = 0.5, keyheight = 0.5, order=1,
+                                              override.aes=list(starshape=15)),
+                           na.translate=FALSE)+
+  scale_starshape_manual(values=c(1, 5,25,29, 15, 18, 17, 14, 11),
+                                guide=guide_legend(keywidth = 0.5, keyheight = 0.5, order=2),
+                                na.translate=FALSE)+
+         scale_size_continuous(range = c(2, 6),
+                               guide = guide_legend(keywidth = 0.5, keyheight = 0.5, order=3,
+                                                    override.aes=list(starshape=15)))
+
+p <- p + new_scale_fill() +
+         geom_fruit(data=scores, geom=geom_tile,
+                    mapping=aes(y=ID, x=score_type, alpha=score, fill=score_type),
+                    color = "grey50", offset = 0.04,size = 0.016, pwidth=0.1)+
+
+         scale_alpha_continuous(range=c(-1.5, 3),
+                             guide=guide_legend(keywidth = 0.3, keyheight = 0.25, order=5)) +
+         geom_fruit(data=de, geom=geom_bar,offset = 0.06,
+                    mapping=aes(y=ct, x=DE_genes),
+                    pwidth=0.2, 
+                    orientation="y", 
+                    stat="identity",axis.params=list(
+                          axis="x", # add axis text of the layer.
+                          text.angle=-45, # the text size of axis.
+                          hjust=0 , # adjust the horizontal position of text of axis.
+                          text.size  = 4,
+                      ),
+          grid.params=list()
+         ) +
+         scale_fill_manual(values = c("#FF0000","#FF0000","#FF0000"),
+                           guide=guide_legend(keywidth = 0.3, keyheight = 0.3, order=4))
+        
+#p
+ggsave(filename = "evo-devo-circ.pdf" , device = "pdf", width = 15, height = 15 , units = "in" , limitsize = FALSE)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
