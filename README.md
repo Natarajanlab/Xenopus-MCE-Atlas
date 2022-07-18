@@ -13,7 +13,7 @@ The single-cell transcriptomics data and metadata can be downloaded for offline 
 _Note: The web version only displays orthologous human gene identifiers over UMAP. The downloadable version include Xenopus gene identifiers, knn-graph coordinates and cell type annotations._  <br/>
 [Twitter thread:]( https://twitter.com/kedar_natarajan)
 
-> _Any requests for materials and code should be addressed to: <br/>[Jakub Sedzinski](jakub.sedzinski@sund.ku.dk) or [Kedar Natarajan](kenana@dtu.dk)_
+> _For any requests for materials, code or anything else, please reach out to: <br/>[Jakub Sedzinski](jakub.sedzinski@sund.ku.dk) or [Kedar Natarajan](kenana@dtu.dk)_
 
 
 
