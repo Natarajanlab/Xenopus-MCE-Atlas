@@ -3,7 +3,7 @@
 
 In this work, we investigate the mucociliary epithelial development in _Xenopus laevis_ through time-course single-cell transcriptomic profiling of 33,900 single-cells over 10 developmental stages.  
 
-This work provides.  
+This work provides:  
 **_I._** Detailed understanding developmental transitions at single-cell level during functional mucociliary epithelial development and differentiation  
 **_II._** Insights into cell fate paradigms during developing mucociliary epithelial development  
 **_III._** Comparative evolutionary developmental comparison across lower and higher vertebrates through systematic comparison of 9 single-cell transcriptomics atlases.  
