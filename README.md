@@ -10,7 +10,9 @@ This work provides:  <br/>
 
 The raw dataset is deposited at Gene Expression Omnibus (_GEO:GSE158088_). This repository consists all the analysis notebooks for reproducing the analysis.   <br/>
 The single-cell transcriptomics data and metadata can be downloaded for offline visualization or interactively visualized at https://cellxgene.cziscience.com/collections/d4055728-b22d-4851-b12d-d7bd0216e8c4.  <br/>
+_Note: The web version only displays orthologous human gene identifiers over UMAP. The downloadable version include Xenopus gene identifiers, knn-graph coordinates and cell type annotations._
 
+***Any requests for materials and code should be addressed to Jakub Sedzinski (jakub.sedzinski@sund.ku.dk) or Kedar Natarajan (kenana@dtu.dk)***
 
 [Twitter thread:]( https://twitter.com/kedar_natarajan)
 
@@ -18,3 +20,4 @@ The single-cell transcriptomics data and metadata can be downloaded for offline 
 ### Citation
 _Lee J, Møller AF et al_ **A single-cell time-resolved profiling of Xenopus mucociliary epithelium reveals non-hierarchical model of development (2022)** *_Unpublished_*  <br/>
 The preprint version of this article is available at: [Link](https://doi.org/XXXXX)  
+
