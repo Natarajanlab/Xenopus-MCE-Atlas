@@ -19,6 +19,6 @@ _Note: The web version only displays orthologous human gene identifiers over UMA
 
 
 ### Citation
-The preprint version of this article is available at[link](https://doi.org/XXXXX) 
+The preprint version of this article is available at [link](https://doi.org/XXXXX)   <br/>
 _Lee J, Møller AF et al **A single-cell time-resolved profiling of Xenopus mucociliary epithelium reveals non-hierarchical model of development (2022)** Unpublished_  <br/>
 
