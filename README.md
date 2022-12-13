@@ -13,7 +13,7 @@ The single-cell transcriptomics data and metadata can be downloaded for offline 
 [Twitter thread:]( https://twitter.com/kedar_natarajan)
 
 > _For any requests for experimental materials, please reach out to: [Jakub Sedzinski](jakub.sedzinski@sund.ku.dk). <br/> 
-> For all other requests, pls contact [Kedar Natarajan](kenana@dtu.dk)_
+> For all other requests, please contact [Kedar Natarajan](kenana@dtu.dk)_
 
 
 
