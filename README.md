@@ -12,7 +12,7 @@ The raw dataset is deposited at Gene Expression Omnibus (_GEO:GSE158088_). This 
 The single-cell transcriptomics data and metadata can be downloaded for offline visualization or interactively visualized at [CellxGene](https://cellxgene.cziscience.com/collections/d4055728-b22d-4851-b12d-d7bd0216e8c4) or [UCSC Cell Browser](https://cells-test.gi.ucsc.edu/?ds=xenopus-dev).  <br/>
 [Twitter thread:]( https://twitter.com/kedar_natarajan)
 
-> _For any requests for experimental materials, please reach out to: <br/>[Jakub Sedzinski](jakub.sedzinski@sund.ku.dk). <br/> 
+> _For any requests for experimental materials, please reach out to: [Jakub Sedzinski](jakub.sedzinski@sund.ku.dk). <br/> 
 > For all other requests, pls contact [Kedar Natarajan](kenana@dtu.dk)_
 
 
