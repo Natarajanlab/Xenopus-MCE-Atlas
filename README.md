@@ -15,6 +15,7 @@ The single-cell transcriptomics data and metadata can be downloaded for offline 
 
 
 ### Citation
-The preprint version of this article is available at [link](https://www.biorxiv.org/content/10.1101/2023.01.03.521555v1)   <br/>
-_Lee J, Møller AF et al **A single-cell time-resolved profiling of Xenopus mucociliary epithelium reveals non-hierarchical model of development (2022)** Unpublished_  <br/>
-
+The manuscript is now published and accessible at _https://www.science.org/doi/full/10.1126/sciadv.add5745_
+**A single-cell, time-resolved profiling of Xenopus mucociliary epithelium reveals nonhierarchical model of development**
+Lee J, Møller AF, Chae S, Bussek A, Park TJ, Kim Y, Lee HS, Pers TH, Kwon T, Sedzinski J, Natarajan KN.
+Sci Adv. 2023 Apr 7;9(14):eadd5745. doi: 10.1126/sciadv.add5745. Epub 2023 Apr 7. PMID: 37027470; PMCID: PMC10081853.
